@@ -3,26 +3,26 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lennon Chia | Security Research and Upstream OSS Fixes</title>
+    <title>Lennon Chia | Upstream Security and OSS Contribution Archive</title>
     <meta
       name="description"
-      content="Lennon Chia's GitHub Pages site covering public CVEs, upstream security fixes, and merged pull requests across external repositories."
+      content="Lennon Chia's GitHub Pages site covering merged upstream pull requests, external repository work, and a public research record linked to NVD and GitHub."
     />
     <meta name="theme-color" content="#07131f" />
     <meta name="color-scheme" content="dark" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Lennon Chia | Security Research and Upstream OSS Fixes" />
+    <meta property="og:title" content="Lennon Chia | Upstream Security and OSS Contribution Archive" />
     <meta
       property="og:description"
-      content="Public CVEs credited under Lennon Chia, external merged PRs, and selected security engineering work across upstream repositories."
+      content="Merged upstream pull requests, external repository coverage, and a public research record linked to GitHub and NVD."
     />
     <meta property="og:url" content="https://13ernkastel.github.io/" />
     <meta property="og:image" content="https://13ernkastel.github.io/favicon.svg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Lennon Chia | Security Research and Upstream OSS Fixes" />
+    <meta name="twitter:title" content="Lennon Chia | Upstream Security and OSS Contribution Archive" />
     <meta
       name="twitter:description"
-      content="Public CVEs credited under Lennon Chia, external merged PRs, and selected security engineering work across upstream repositories."
+      content="Merged upstream pull requests, external repository coverage, and a public research record linked to GitHub and NVD."
     />
     <link rel="canonical" href="https://13ernkastel.github.io/" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -41,26 +41,27 @@
         <nav class="topbar">
           <a class="brand" href="/">13ernkastel</a>
           <div class="nav-links">
-            <a href="#cves">CVEs</a>
-            <a href="#work">Merged Work</a>
+            <a href="#recent">Recent Work</a>
+            <a href="#work">Merged Archive</a>
             <a href="#coverage">Coverage</a>
+            <a href="#research">Research</a>
             <a href="#links">Links</a>
           </div>
         </nav>
 
         <section class="hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">Security research and upstream remediation</p>
+            <p class="eyebrow">Upstream fixes, security review, and maintainer-facing follow-through</p>
             <h1>Lennon Chia</h1>
             <p class="hero-text">
-              I contribute upstream fixes across auth, SSRF, retrieval, shell escape paths,
-              artifact handling, documentation integrity, and security-driven runtime hardening.
-              This site tracks public CVEs credited under <code>Lennon Chia</code> and
-              <code>Chia Min Jun Lennon</code>, plus merged pull requests into external
-              repositories only.
+              I ship upstream fixes across security, auth, SSRF, retrieval, runtime hardening, and
+              docs CI. This site is now centered on what has actually landed on GitHub: merged pull
+              requests into external repositories, a repository-by-repository coverage map, and a
+              lower-priority public research appendix linked through NVD and GitHub only.
             </p>
             <div class="hero-actions">
               <a class="button primary" href="https://github.com/13ernkastel">GitHub Profile</a>
+              <a class="button secondary" href="https://github.com/pulls?q=is%3Apr+author%3A13ernkastel+is%3Amerged+-user%3A13ernkastel">Merged PR Search</a>
               <a class="button secondary" href="https://github.com/13ernkastel/security-findings">Security Findings</a>
             </div>
           </div>
@@ -70,10 +71,10 @@
               <p class="panel-label">Snapshot</p>
               <p class="panel-date">2026-04-08</p>
               <ul class="compact-list">
-                <li>11 public CVEs verified from public CVE records</li>
-                <li>7 public remediation PRs linked directly</li>
-                <li>13 external merged PRs tracked on this page</li>
-                <li>Owned repositories excluded from merged-work counts</li>
+                <li>13 merged PRs into external upstream repositories</li>
+                <li>4 upstream organizations and 4 repositories covered</li>
+                <li>Latest merge: bytedance/deer-flow#1963 on 2026-04-08</li>
+                <li>Public research appendix kept separate from the main work archive</li>
               </ul>
             </div>
           </aside>
@@ -87,268 +88,94 @@
             <p class="stat-label">External merged PRs</p>
           </article>
           <article class="stat-card">
-            <p class="stat-value">11</p>
-            <p class="stat-label">Public CVEs</p>
-          </article>
-          <article class="stat-card">
-            <p class="stat-value">7</p>
-            <p class="stat-label">Public fix PRs found</p>
+            <p class="stat-value">4</p>
+            <p class="stat-label">Upstream organizations</p>
           </article>
           <article class="stat-card">
             <p class="stat-value">4</p>
-            <p class="stat-label">Upstream orgs with merges</p>
+            <p class="stat-label">External repositories</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-value">11</p>
+            <p class="stat-label">Public CVEs in appendix</p>
           </article>
         </section>
 
         <section class="section" id="focus">
           <div class="section-heading">
-            <p class="section-tag">Focus</p>
-            <h2>What I optimize for</h2>
+            <p class="section-tag">Approach</p>
+            <h2>How I work</h2>
           </div>
           <div class="card-grid">
             <article class="feature-card">
-              <h3>Security-first upstream fixes</h3>
-              <p>Trust-boundary bugs, access-control gaps, SSRF exposure, unsafe file handling, and shell escape paths.</p>
+              <h3>Security-first upstream scope</h3>
+              <p>Trust-boundary bugs, access control failures, SSRF surfaces, shell escape paths, and runtime hardening gaps.</p>
             </article>
             <article class="feature-card">
-              <h3>Narrow, reviewable scope</h3>
-              <p>Root-cause patches with tests, reduced blast radius, and maintainable follow-through after review comments land.</p>
+              <h3>Reviewable patches</h3>
+              <p>Narrow fixes with tests, explicit rationale, and a patch shape maintainers can merge without inheriting unrelated churn.</p>
             </article>
             <article class="feature-card">
-              <h3>Public traceability</h3>
-              <p>CVEs, public issues, fix PRs, and merged work are tied back to the upstream artifact whenever a public reference exists.</p>
+              <h3>Aftercare matters</h3>
+              <p>I treat reviewer comments, PR conflicts, documentation cleanup, and CI guardrails as part of getting the fix landed properly.</p>
             </article>
           </div>
         </section>
 
-        <section class="section" id="cves">
+        <section class="section" id="recent">
           <div class="section-heading">
-            <p class="section-tag">Public CVEs</p>
-            <h2>Public advisories credited under Lennon Chia</h2>
+            <p class="section-tag">Recent GitHub Work</p>
+            <h2>What landed most recently</h2>
           </div>
           <p class="section-intro">
-            The archive below consolidates the currently public CVEs I could verify from public
-            CVE records. When a public remediation PR exists, it is linked directly. When no public
-            PR is exposed, the public issue or note from the record is shown instead.
+            These are the most recent merged upstream pull requests from the current GitHub snapshot.
+            The goal here is to show the practical work stream, not just a list of advisories.
           </p>
-
-          <div class="card-grid cve-grid">
-            <article class="cve-card critical">
-              <p class="severity">Critical</p>
-              <h3>CVE-2026-22207</h3>
-              <p class="project">volcengine/OpenViking</p>
-              <p>Missing <code>root_api_key</code> allowed anonymous root access to the management API.</p>
-              <div class="card-links">
-                <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22207">NVD</a>
-                <a href="https://www.vulncheck.com/advisories/openviking-missing-root-api-key-allows-anonymous-root-access">VulnCheck</a>
-                <a href="https://github.com/volcengine/OpenViking/pull/1132">Public PR</a>
-              </div>
+          <div class="card-grid">
+            <article class="feature-card">
+              <p class="card-kicker">bytedance/deer-flow</p>
+              <h3><a href="https://github.com/bytedance/deer-flow/pull/1963">#1963 deployment sizing guidance</a></h3>
+              <p>Grouped repeated server-sizing questions into one docs PR with practical host guidance for dev, Docker, and production.</p>
             </article>
-
-            <article class="cve-card high">
-              <p class="severity">High</p>
-              <h3>CVE-2026-34430</h3>
-              <p class="project">bytedance/deer-flow</p>
-              <p>LocalSandboxProvider host shell escape removed through the upstream remediation patch.</p>
-              <div class="card-links">
-                <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-34430">NVD</a>
-                <a href="https://www.vulncheck.com/advisories/bytedance-deerflow-localsandboxprovider-host-bash-escape">VulnCheck</a>
-                <a href="https://github.com/bytedance/deer-flow/pull/1547">Fix PR</a>
-              </div>
+            <article class="feature-card">
+              <p class="card-kicker">NVIDIA/NemoClaw</p>
+              <h3><a href="https://github.com/NVIDIA/NemoClaw/pull/1263">#1263 lifecycle guidance cleanup</a></h3>
+              <p>Removed version-pinned compatibility claims and kept only durable, maintainer-approved lifecycle guidance.</p>
             </article>
-
-            <article class="cve-card high">
-              <p class="severity">High</p>
-              <h3>CVE-2026-28518</h3>
-              <p class="project">volcengine/OpenViking</p>
-              <p>Unsafe <code>.ovpack</code> ZIP member handling enabled path traversal outside the intended import directory.</p>
-              <div class="card-links">
-                <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-28518">NVD</a>
-                <a href="https://www.vulncheck.com/advisories/openviking-ovpack-import-zip-slip-path-traversal">VulnCheck</a>
-                <a href="https://github.com/volcengine/OpenViking/pull/344">Fix PR</a>
-              </div>
+            <article class="feature-card">
+              <p class="card-kicker">NVIDIA/NemoClaw</p>
+              <h3><a href="https://github.com/NVIDIA/NemoClaw/pull/1499">#1499 immutable symlink hardening status</a></h3>
+              <p>Made security-hardening status visible in a way reviewers and operators can evaluate quickly.</p>
             </article>
-
-            <article class="cve-card high">
-              <p class="severity">High</p>
-              <h3>CVE-2026-22682</h3>
-              <p class="project">HKUDS/OpenHarness</p>
-              <p>Improper access control in built-in file tools allowed reads outside the intended repository scope.</p>
-              <div class="card-links">
-                <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22682">NVD</a>
-                <a href="https://www.vulncheck.com/advisories/openharness-improper-access-control-via-file-tools">VulnCheck</a>
-                <a href="https://github.com/HKUDS/OpenHarness/pull/32">Fix PR</a>
-              </div>
+            <article class="feature-card">
+              <p class="card-kicker">HKUDS/OpenHarness</p>
+              <h3><a href="https://github.com/HKUDS/OpenHarness/pull/32">#32 path-rule enforcement for file tools</a></h3>
+              <p>Closed a repository-scope escape path in built-in file tooling through a narrow upstream patch.</p>
             </article>
-
-            <article class="cve-card medium">
-              <p class="severity">Medium</p>
-              <h3>CVE-2026-32859</h3>
-              <p class="project">bytedance/deer-flow</p>
-              <p>Active artifact MIME types were forced into safe download behavior to mitigate stored XSS.</p>
-              <div class="card-links">
-                <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-32859">NVD</a>
-                <a href="https://www.vulncheck.com/advisories/bytedance-deerflow-stored-xss-via-inline-artifact-rendering">VulnCheck</a>
-                <a href="https://github.com/bytedance/deer-flow/pull/1389">Fix PR</a>
-              </div>
+            <article class="feature-card">
+              <p class="card-kicker">volcengine/OpenViking</p>
+              <h3><a href="https://github.com/volcengine/OpenViking/pull/1182">#1182 task ownership enforcement</a></h3>
+              <p>Fixed task API ownership leakage so task polling and retrieval stay bound to the owning identity.</p>
             </article>
-
-            <article class="cve-card medium">
-              <p class="severity">Medium</p>
-              <h3>CVE-2026-22680</h3>
-              <p class="project">volcengine/OpenViking</p>
-              <p>Missing authorization in task polling endpoints allowed unauthorized task exposure before the ownership fix landed.</p>
-              <div class="card-links">
-                <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22680">NVD</a>
-                <a href="https://www.vulncheck.com/advisories/openviking-missing-authorization-via-task-polling">VulnCheck</a>
-                <a href="https://github.com/volcengine/OpenViking/pull/1182">Fix PR</a>
-              </div>
+            <article class="feature-card">
+              <p class="card-kicker">volcengine/OpenViking</p>
+              <h3><a href="https://github.com/volcengine/OpenViking/pull/1133">#1133 private-network SSRF hardening</a></h3>
+              <p>Prevented resource-ingestion requests from reaching internal network targets through upstream SSRF hardening.</p>
             </article>
           </div>
-
-          <article class="coverage-card archive-card">
-            <h3>Full public CVE archive</h3>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>CVE</th>
-                    <th>Project</th>
-                    <th>Severity</th>
-                    <th>Public record</th>
-                    <th>Public remediation</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22207">CVE-2026-22207</a></td>
-                    <td>volcengine/OpenViking</td>
-                    <td><span class="pill critical">Critical</span></td>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22207">NVD</a> <a href="https://www.vulncheck.com/advisories/openviking-missing-root-api-key-allows-anonymous-root-access">VulnCheck</a></td>
-                    <td><a href="https://github.com/volcengine/OpenViking/pull/1132">Closed hardening PR #1132</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22680">CVE-2026-22680</a></td>
-                    <td>volcengine/OpenViking</td>
-                    <td><span class="pill medium">Medium</span></td>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22680">NVD</a> <a href="https://www.vulncheck.com/advisories/openviking-missing-authorization-via-task-polling">VulnCheck</a></td>
-                    <td><a href="https://github.com/volcengine/OpenViking/pull/1182">Fix PR #1182</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22682">CVE-2026-22682</a></td>
-                    <td>HKUDS/OpenHarness</td>
-                    <td><span class="pill high">High</span></td>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22682">NVD</a> <a href="https://www.vulncheck.com/advisories/openharness-improper-access-control-via-file-tools">VulnCheck</a></td>
-                    <td><a href="https://github.com/HKUDS/OpenHarness/pull/32">Fix PR #32</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-25858">CVE-2026-25858</a></td>
-                    <td>macrozheng/mall</td>
-                    <td><span class="pill critical">Critical</span></td>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-25858">NVD</a> <a href="https://www.vulncheck.com/advisories/macrozheng-mall-unauthenticated-password-reset-via-otp-disclosure">VulnCheck</a></td>
-                    <td><span class="note-text">Deleted GitHub issue #946 is cited by the CVE record. No public fix PR found.</span></td>
-                  </tr>
-                  <tr>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-25870">CVE-2026-25870</a></td>
-                    <td>doramart/DoraCMS</td>
-                    <td><span class="pill medium">Medium</span></td>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-25870">NVD</a> <a href="https://www.vulncheck.com/advisories/doracms-ueditor-remote-image-fetch-ssrf">VulnCheck</a></td>
-                    <td><a href="https://github.com/doramart/DoraCMS/issues/268">Public issue #268</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-26218">CVE-2026-26218</a></td>
-                    <td>newbee-ltd/newbee-mall</td>
-                    <td><span class="pill critical">Critical</span></td>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-26218">NVD</a> <a href="https://www.vulncheck.com/advisories/newbee-mall-default-seeded-administrator-credentials-allow-account-takeover">VulnCheck</a></td>
-                    <td><a href="https://github.com/newbee-ltd/newbee-mall/issues/119">Public issue #119</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-26219">CVE-2026-26219</a></td>
-                    <td>newbee-ltd/newbee-mall</td>
-                    <td><span class="pill critical">Critical</span></td>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-26219">NVD</a> <a href="https://www.vulncheck.com/advisories/newbee-mall-unsalted-md5-password-hashing-enables-offline-credential-cracking">VulnCheck</a></td>
-                    <td><a href="https://github.com/newbee-ltd/newbee-mall/issues/119">Public issue #119</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-28518">CVE-2026-28518</a></td>
-                    <td>volcengine/OpenViking</td>
-                    <td><span class="pill high">High</span></td>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-28518">NVD</a> <a href="https://www.vulncheck.com/advisories/openviking-ovpack-import-zip-slip-path-traversal">VulnCheck</a></td>
-                    <td><a href="https://github.com/volcengine/OpenViking/pull/344">Fix PR #344</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-32859">CVE-2026-32859</a></td>
-                    <td>bytedance/deer-flow</td>
-                    <td><span class="pill medium">Medium</span></td>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-32859">NVD</a> <a href="https://www.vulncheck.com/advisories/bytedance-deerflow-stored-xss-via-inline-artifact-rendering">VulnCheck</a></td>
-                    <td><a href="https://github.com/bytedance/deer-flow/pull/1389">Fix PR #1389</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-34430">CVE-2026-34430</a></td>
-                    <td>bytedance/deer-flow</td>
-                    <td><span class="pill high">High</span></td>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-34430">NVD</a> <a href="https://www.vulncheck.com/advisories/bytedance-deerflow-localsandboxprovider-host-bash-escape">VulnCheck</a></td>
-                    <td><a href="https://github.com/bytedance/deer-flow/pull/1547">Fix PR #1547</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-34999">CVE-2026-34999</a></td>
-                    <td>volcengine/OpenViking</td>
-                    <td><span class="pill medium">Medium</span></td>
-                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-34999">NVD</a> <a href="https://www.vulncheck.com/advisories/openviking-bot-proxy-endpoints-allow-unauthenticated-access">VulnCheck</a></td>
-                    <td><a href="https://github.com/volcengine/OpenViking/pull/996">Fix PR #996</a></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </article>
         </section>
 
         <section class="section" id="work">
           <div class="section-heading">
-            <p class="section-tag">Merged Work</p>
-            <h2>External merged PR archive</h2>
+            <p class="section-tag">Merged Archive</p>
+            <h2>Full external merged PR archive</h2>
           </div>
           <p class="section-intro">
-            This archive tracks merged pull requests into upstream repositories only. Fork-only PRs
-            and repositories owned by <code>13ernkastel</code> are excluded from the counts and the
-            archive below.
+            This archive tracks merged pull requests into upstream repositories only. Work on
+            repositories owned by <code>13ernkastel</code>, fork-only PRs, open PRs, and
+            closed-unmerged work are excluded from the archive and counts.
           </p>
-
-          <div class="timeline">
-            <article class="timeline-item">
-              <p class="timeline-project">bytedance/deer-flow</p>
-              <h3><a href="https://github.com/bytedance/deer-flow/pull/1963">#1963</a> deployment sizing guidance</h3>
-              <p>Grouped repeated runtime-sizing questions into one docs PR with practical host recommendations for dev, Docker, and production runs.</p>
-            </article>
-            <article class="timeline-item">
-              <p class="timeline-project">NVIDIA/NemoClaw</p>
-              <h3><a href="https://github.com/NVIDIA/NemoClaw/pull/1499">#1499</a> immutable symlink hardening visibility</h3>
-              <p>Surfaced immutable symlink hardening status clearly so the security posture is visible without digging through implementation details.</p>
-            </article>
-            <article class="timeline-item">
-              <p class="timeline-project">NVIDIA/NemoClaw</p>
-              <h3><a href="https://github.com/NVIDIA/NemoClaw/pull/1263">#1263</a> version-agnostic lifecycle guidance</h3>
-              <p>Removed release-pinned compatibility claims and kept only durable onboarding and lifecycle guidance.</p>
-            </article>
-            <article class="timeline-item">
-              <p class="timeline-project">HKUDS/OpenHarness</p>
-              <h3><a href="https://github.com/HKUDS/OpenHarness/pull/32">#32</a> path-rule enforcement for file tools</h3>
-              <p>Closed file-tool path-rule bypass behavior with an upstream fix that kept the patch narrow and reviewable.</p>
-            </article>
-            <article class="timeline-item">
-              <p class="timeline-project">volcengine/OpenViking</p>
-              <h3><a href="https://github.com/volcengine/OpenViking/pull/1182">#1182</a> task ownership enforcement</h3>
-              <p>Fixed task API ownership leakage so task access stays aligned to the owning identity.</p>
-            </article>
-            <article class="timeline-item">
-              <p class="timeline-project">volcengine/OpenViking</p>
-              <h3><a href="https://github.com/volcengine/OpenViking/pull/1133">#1133</a> private-network SSRF hardening</h3>
-              <p>Closed server-side request routing into private network targets in HTTP resource ingestion.</p>
-            </article>
-          </div>
-
           <article class="coverage-card archive-card">
-            <h3>Full external merged PR archive</h3>
             <div class="table-wrap">
               <table>
                 <thead>
@@ -382,7 +209,7 @@
                     <td>2026-04-06</td>
                     <td>NVIDIA/NemoClaw</td>
                     <td><a href="https://github.com/NVIDIA/NemoClaw/pull/1499">#1499</a></td>
-                    <td>Immutable symlink hardening status surfaced in upstream docs and UX.</td>
+                    <td>Immutable symlink hardening status surfaced more clearly.</td>
                   </tr>
                   <tr>
                     <td>2026-04-05</td>
@@ -465,7 +292,7 @@
                     <tr>
                       <td>volcengine</td>
                       <td>6</td>
-                      <td>Auth, SSRF, retrieval, import validation, task ownership</td>
+                      <td>Auth, SSRF, retrieval, import validation, task ownership, plugin stability</td>
                     </tr>
                     <tr>
                       <td>NVIDIA</td>
@@ -502,12 +329,12 @@
                     <tr>
                       <td>volcengine/OpenViking</td>
                       <td>6</td>
-                      <td>Auth, SSRF, retrieval, task ownership, ZIP import validation</td>
+                      <td>Auth, SSRF, retrieval, task ownership, import validation, plugin stability</td>
                     </tr>
                     <tr>
                       <td>NVIDIA/NemoClaw</td>
                       <td>3</td>
-                      <td>Compatibility guidance, docs CI, hardening visibility</td>
+                      <td>Runtime hardening visibility, docs CI, compatibility guidance</td>
                     </tr>
                     <tr>
                       <td>bytedance/deer-flow</td>
@@ -517,13 +344,119 @@
                     <tr>
                       <td>HKUDS/OpenHarness</td>
                       <td>1</td>
-                      <td>Path rule enforcement</td>
+                      <td>File-tool path rule enforcement</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </article>
           </div>
+        </section>
+
+        <section class="section" id="research">
+          <div class="section-heading">
+            <p class="section-tag">Public Research Record</p>
+            <h2>Appendix: public CVEs tied back to NVD and GitHub</h2>
+          </div>
+          <p class="section-intro">
+            This appendix keeps the public record visible without making the site depend on third-party
+            advisory branding. Each row links to NVD first, then the public GitHub PR or issue when
+            one is available.
+          </p>
+          <article class="coverage-card archive-card">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>CVE</th>
+                    <th>Project</th>
+                    <th>Severity</th>
+                    <th>Public record</th>
+                    <th>GitHub reference</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22207">CVE-2026-22207</a></td>
+                    <td>volcengine/OpenViking</td>
+                    <td><span class="pill critical">Critical</span></td>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22207">NVD</a></td>
+                    <td><a href="https://github.com/volcengine/OpenViking/pull/1132">Closed hardening PR #1132</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22680">CVE-2026-22680</a></td>
+                    <td>volcengine/OpenViking</td>
+                    <td><span class="pill medium">Medium</span></td>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22680">NVD</a></td>
+                    <td><a href="https://github.com/volcengine/OpenViking/pull/1182">Fix PR #1182</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22682">CVE-2026-22682</a></td>
+                    <td>HKUDS/OpenHarness</td>
+                    <td><span class="pill high">High</span></td>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-22682">NVD</a></td>
+                    <td><a href="https://github.com/HKUDS/OpenHarness/pull/32">Fix PR #32</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-25858">CVE-2026-25858</a></td>
+                    <td>macrozheng/mall</td>
+                    <td><span class="pill critical">Critical</span></td>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-25858">NVD</a></td>
+                    <td><span class="note-text">Deleted GitHub issue #946 is cited by the public CVE record. No public fix PR found.</span></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-25870">CVE-2026-25870</a></td>
+                    <td>doramart/DoraCMS</td>
+                    <td><span class="pill medium">Medium</span></td>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-25870">NVD</a></td>
+                    <td><a href="https://github.com/doramart/DoraCMS/issues/268">Public issue #268</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-26218">CVE-2026-26218</a></td>
+                    <td>newbee-ltd/newbee-mall</td>
+                    <td><span class="pill critical">Critical</span></td>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-26218">NVD</a></td>
+                    <td><a href="https://github.com/newbee-ltd/newbee-mall/issues/119">Public issue #119</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-26219">CVE-2026-26219</a></td>
+                    <td>newbee-ltd/newbee-mall</td>
+                    <td><span class="pill critical">Critical</span></td>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-26219">NVD</a></td>
+                    <td><a href="https://github.com/newbee-ltd/newbee-mall/issues/119">Public issue #119</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-28518">CVE-2026-28518</a></td>
+                    <td>volcengine/OpenViking</td>
+                    <td><span class="pill high">High</span></td>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-28518">NVD</a></td>
+                    <td><a href="https://github.com/volcengine/OpenViking/pull/344">Fix PR #344</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-32859">CVE-2026-32859</a></td>
+                    <td>bytedance/deer-flow</td>
+                    <td><span class="pill medium">Medium</span></td>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-32859">NVD</a></td>
+                    <td><a href="https://github.com/bytedance/deer-flow/pull/1389">Fix PR #1389</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-34430">CVE-2026-34430</a></td>
+                    <td>bytedance/deer-flow</td>
+                    <td><span class="pill high">High</span></td>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-34430">NVD</a></td>
+                    <td><a href="https://github.com/bytedance/deer-flow/pull/1547">Fix PR #1547</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-34999">CVE-2026-34999</a></td>
+                    <td>volcengine/OpenViking</td>
+                    <td><span class="pill medium">Medium</span></td>
+                    <td><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-34999">NVD</a></td>
+                    <td><a href="https://github.com/volcengine/OpenViking/pull/996">Fix PR #996</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
         </section>
 
         <section class="section" id="links">
@@ -534,23 +467,23 @@
           <div class="link-grid">
             <a class="link-card" href="https://github.com/13ernkastel">
               <h3>GitHub</h3>
-              <p>Current profile, repositories, and contribution history.</p>
+              <p>Current profile, repositories, and merged contribution history.</p>
+            </a>
+            <a class="link-card" href="https://github.com/13ernkastel/13ernkastel">
+              <h3>Profile README</h3>
+              <p>The profile repository now mirrors the merged-work-first view instead of the older CVE-heavy summary.</p>
             </a>
             <a class="link-card" href="https://github.com/13ernkastel/security-findings">
               <h3>Security Findings</h3>
-              <p>Disclosure drafts, references, fix-tracking notes, and the local security archive.</p>
-            </a>
-            <a class="link-card" href="https://github.com/13ernkastel/13ernkastel.github.io">
-              <h3>Site Repository</h3>
-              <p>Source for this static GitHub Pages site and its manually curated public inventory.</p>
+              <p>Disclosure drafts, references, fix-tracking notes, and local security research archives.</p>
             </a>
           </div>
         </section>
       </main>
 
       <footer class="footer">
-        <p>Built as a static GitHub Pages site for public CVE tracking and external upstream contribution history.</p>
-        <p>Data policy: public CVE records credited under Lennon Chia or Chia Min Jun Lennon, plus merged PRs into external repositories only.</p>
+        <p>Built as a static GitHub Pages site for merged upstream contribution history and a secondary public research appendix.</p>
+        <p>Data policy: GitHub merged PR metadata first, public NVD CVE records second, and no repositories owned by <code>13ernkastel</code> in the merged-work archive.</p>
       </footer>
     </div>
   </body>

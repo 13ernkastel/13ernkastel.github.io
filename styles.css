@@ -149,7 +149,8 @@ th,
 .eyebrow,
 .section-tag,
 .panel-label,
-.severity {
+.severity,
+.card-kicker {
   color: var(--accent);
   font-size: 0.82rem;
   letter-spacing: 0.08em;
@@ -305,6 +306,11 @@ th,
 .link-card p {
   margin: 0;
   line-height: 1.65;
+}
+
+.card-kicker {
+  margin: 0 0 0.55rem;
+  font-family: "IBM Plex Mono", monospace;
 }
 
 .cve-grid {

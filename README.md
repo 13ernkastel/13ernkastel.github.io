@@ -4,9 +4,9 @@ Static GitHub Pages site for `13ernkastel`.
 
 The page tracks:
 
-- public CVEs credited under `Lennon Chia` or `Chia Min Jun Lennon`
 - merged pull requests into external upstream repositories
-- selected security remediation and review history
+- repository and organization coverage across upstream work
+- a secondary public research appendix linked through NVD and GitHub
 
 ## Contents
 
@@ -26,5 +26,5 @@ Pushes to `main` publish the site through GitHub Pages for the repository user-s
 ## Data sources
 
 - public GitHub pull request metadata
-- public CVE records from NVD and related public advisories
+- public CVE records from NVD
 - local notes from `13ernkastel/security-findings`
