@@ -18,33 +18,33 @@ function Research() {
           <table className="research-table">
             <thead>
               <tr>
-                <th>CVE</th>
-                <th>Project</th>
-                <th>Severity</th>
-                <th>Public record</th>
-                <th>GitHub reference</th>
+                <th scope="col" className="col-cve">CVE</th>
+                <th scope="col" className="col-project">Project</th>
+                <th scope="col" className="col-severity">Severity</th>
+                <th scope="col" className="col-record">Public record</th>
+                <th scope="col" className="col-reference">GitHub reference</th>
               </tr>
             </thead>
             <tbody>
               {researchRecords.map((record) => (
                 <tr key={record.cve}>
-                  <td>
+                  <td className="research-cve">
                     <a href={record.recordUrl} target="_blank" rel="noreferrer">
                       {record.cve}
                     </a>
                   </td>
-                  <td>{record.project}</td>
-                  <td>
+                  <td className="research-project">{record.project}</td>
+                  <td className="research-severity">
                     <span className={`severity-pill ${record.severity.toLowerCase()}`}>
                       {record.severity}
                     </span>
                   </td>
-                  <td>
+                  <td className="research-record">
                     <a href={record.recordUrl} target="_blank" rel="noreferrer">
                       {record.recordLabel}
                     </a>
                   </td>
-                  <td>
+                  <td className="research-reference">
                     {record.githubUrl ? (
                       <a href={record.githubUrl} target="_blank" rel="noreferrer">
                         {record.githubLabel}
