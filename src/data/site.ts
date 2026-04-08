@@ -1,8 +1,8 @@
 export const profile = {
   name: "Lennon Chia",
-  role: "Upstream security researcher and OSS contributor",
+  role: "AI security researcher",
   summary:
-    "I land upstream fixes across auth, SSRF, retrieval, runtime hardening, harness engineering, docs CI, and maintainer-facing follow-through. This portfolio now uses a React portfolio template structure, but the content is driven by live GitHub work that has actually merged into external repositories.",
+    "I investigate AI agent, harness, and runtime security issues, then turn the findings into upstream fixes. My work focuses on trust boundaries, access control, sandbox escape paths, SSRF, stored XSS, and operational hardening that makes AI systems safer in practice.",
   avatarUrl: "https://avatars.githubusercontent.com/13ernkastel",
   githubUrl: "https://github.com/13ernkastel",
   githubReadmeUrl: "https://github.com/13ernkastel/13ernkastel",
@@ -16,53 +16,37 @@ export const stats = [
   { value: "13", label: "External merged PRs" },
   { value: "4", label: "Upstream organizations" },
   { value: "4", label: "External repositories" },
-  { value: "12", label: "Research records" },
+  { value: "12", label: "Public security records" },
 ];
 
 export const focusAreas = [
   {
-    title: "Security and trust boundaries",
+    title: "AI agent and trust-boundary security",
     description:
-      "Auth bypasses, SSRF routes, shell escape paths, file-tool scope breaks, stored XSS, unsafe import paths, and agentic workflow trust boundaries.",
-    chips: ["Auth", "SSRF", "Shell Escape", "Stored XSS", "Access Control", "File Handling", "Agent Security"],
+      "Agent workflows, access-control boundaries, SSRF paths, unsafe tool exposure, sandbox escape routes, retrieval abuse, and cross-user leakage in AI-facing systems.",
+    chips: ["Agent Security", "Access Control", "SSRF", "Sandbox Escape", "Stored XSS", "Trust Boundaries"],
   },
   {
-    title: "Mergeable patch shape",
+    title: "Security review and patch engineering",
     description:
-      "Narrow fixes with tests, explicit reviewer rationale, and conflict resolution that keeps the maintainer blast radius low while making the system safer.",
-    chips: ["Tests", "Scoped Diffs", "Reviewer Follow-through", "Conflict Resolution", "Docs Cleanup"],
+      "Security-oriented code review, proof-of-impact reproduction, narrow remediation patches, regression tests, and maintainer-facing rationale that gets fixes merged cleanly.",
+    chips: ["Code Review", "Repro Cases", "Regression Tests", "Scoped Fixes", "Maintainer Collaboration", "Security Triage"],
   },
   {
-    title: "Harness engineering and guardrails",
+    title: "Harness engineering for safer AI systems",
     description:
-      "Harness engineering, docs CI, runtime status visibility, deployment guidance, and compatibility notes that stop the issue from drifting back in.",
-    chips: ["Harness Engineering", "GitHub Actions", "Docs CI", "Runtime Hardening", "Deployment Docs", "Compatibility Guidance"],
+      "Harness engineering, safer defaults, runtime guardrails, docs and CI checks, and deployment guidance that reduce the chance insecure AI behavior drifts back into production.",
+    chips: ["Harness Engineering", "Safer Defaults", "Guardrails", "Runtime Hardening", "Docs CI", "Deployment Safety"],
   },
 ];
 
 export const timelineEntries = [
   {
-    date: "2026-04-08",
-    repo: "bytedance/deer-flow",
-    title: "#1963 deployment sizing guidance",
-    description:
-      "Grouped repeated deployment-sizing questions into a single upstream docs PR with practical host guidance for dev, Docker, and production runs.",
-    url: "https://github.com/bytedance/deer-flow/pull/1963",
-  },
-  {
-    date: "2026-04-07",
-    repo: "NVIDIA/NemoClaw",
-    title: "#1263 lifecycle guidance cleanup",
-    description:
-      "Reworked OpenShell lifecycle guidance around maintainable, version-agnostic language after maintainer review.",
-    url: "https://github.com/NVIDIA/NemoClaw/pull/1263",
-  },
-  {
     date: "2026-04-06",
     repo: "NVIDIA/NemoClaw",
     title: "#1499 immutable symlink hardening visibility",
     description:
-      "Made security hardening status visible in a way reviewers and operators can evaluate quickly.",
+      "Surfaced filesystem hardening state so maintainers and operators can verify security posture quickly.",
     url: "https://github.com/NVIDIA/NemoClaw/pull/1499",
   },
   {
@@ -70,7 +54,7 @@ export const timelineEntries = [
     repo: "HKUDS/OpenHarness",
     title: "#32 path-rule enforcement for file tools",
     description:
-      "Closed a file-tool repository-scope bypass path through a narrow upstream patch.",
+      "Closed a file-tool repository-scope bypass path so agent-triggered file access stays inside policy.",
     url: "https://github.com/HKUDS/OpenHarness/pull/32",
   },
   {
@@ -78,75 +62,91 @@ export const timelineEntries = [
     repo: "volcengine/OpenViking",
     title: "#1133 private-network SSRF hardening",
     description:
-      "Prevented resource-ingestion requests from reaching internal network targets.",
+      "Blocked resource-ingestion requests from reaching internal network targets.",
     url: "https://github.com/volcengine/OpenViking/pull/1133",
+  },
+  {
+    date: "2026-04-03",
+    repo: "volcengine/OpenViking",
+    title: "#1182 task ownership enforcement",
+    description:
+      "Stopped cross-user task metadata exposure by tying task reads and deduplication to the authenticated owner.",
+    url: "https://github.com/volcengine/OpenViking/pull/1182",
   },
   {
     date: "2026-03-29",
     repo: "bytedance/deer-flow",
     title: "#1547 host shell escape remediation",
     description:
-      "Landed the upstream patch for a LocalSandboxProvider host shell escape issue.",
+      "Removed a dangerous default that let local sandbox bash escape onto the host.",
     url: "https://github.com/bytedance/deer-flow/pull/1547",
+  },
+  {
+    date: "2026-03-26",
+    repo: "bytedance/deer-flow",
+    title: "#1389 stored XSS mitigation",
+    description:
+      "Forced download handling for active artifact content to cut off a stored XSS execution path.",
+    url: "https://github.com/bytedance/deer-flow/pull/1389",
   },
 ];
 
 export const selectedWork = [
   {
     repo: "bytedance/deer-flow",
-    title: "#1963 deployment sizing guidance",
+    title: "#1547 host shell escape remediation",
     description:
-      "Clarified minimum and recommended deployment sizing for practical server operation.",
-    url: "https://github.com/bytedance/deer-flow/pull/1963",
+      "Removed a dangerous host-bash default so local AI sandbox execution cannot silently escape onto the host.",
+    url: "https://github.com/bytedance/deer-flow/pull/1547",
   },
   {
-    repo: "NVIDIA/NemoClaw",
-    title: "#1499 immutable symlink hardening status",
+    repo: "HKUDS/OpenHarness",
+    title: "#32 path-rule enforcement for file tools",
     description:
-      "Surfaced immutable symlink hardening state in a way maintainers can track.",
-    url: "https://github.com/NVIDIA/NemoClaw/pull/1499",
-  },
-  {
-    repo: "NVIDIA/NemoClaw",
-    title: "#1139 docs link validation",
-    description:
-      "Added PR-time markdown link validation to keep broken references out of main.",
-    url: "https://github.com/NVIDIA/NemoClaw/pull/1139",
+      "Fixed a file-tool permission gap so agent-influenced reads and writes respect configured path rules.",
+    url: "https://github.com/HKUDS/OpenHarness/pull/32",
   },
   {
     repo: "volcengine/OpenViking",
     title: "#1182 task ownership enforcement",
     description:
-      "Fixed task polling ownership leakage so access stays tied to the owning identity.",
+      "Closed task metadata leakage so background task state stays scoped to the authenticated owner.",
     url: "https://github.com/volcengine/OpenViking/pull/1182",
   },
   {
     repo: "volcengine/OpenViking",
-    title: "#1162 tags metadata retrieval",
+    title: "#1133 private-network SSRF hardening",
     description:
-      "Added tags metadata support for cross-subtree retrieval behavior.",
-    url: "https://github.com/volcengine/OpenViking/pull/1162",
+      "Blocked ingestion-time requests from reaching internal network destinations.",
+    url: "https://github.com/volcengine/OpenViking/pull/1133",
   },
   {
     repo: "volcengine/OpenViking",
     title: "#996 bot proxy auth enforcement",
     description:
-      "Removed unauthenticated access to bot proxy chat endpoints.",
+      "Required authentication on bot proxy routes that previously allowed unauthenticated access.",
     url: "https://github.com/volcengine/OpenViking/pull/996",
   },
   {
     repo: "bytedance/deer-flow",
     title: "#1389 stored XSS mitigation",
     description:
-      "Forced safe download handling for active artifact MIME types to mitigate stored XSS.",
+      "Prevented inline execution of active artifact content served back to users.",
     url: "https://github.com/bytedance/deer-flow/pull/1389",
   },
   {
     repo: "volcengine/OpenViking",
     title: "#344 ZIP path validation",
     description:
-      "Rejected unsafe .ovpack ZIP member paths during import.",
+      "Rejected malicious ZIP member paths during import to stop path traversal through package ingestion.",
     url: "https://github.com/volcengine/OpenViking/pull/344",
+  },
+  {
+    repo: "NVIDIA/NemoClaw",
+    title: "#1499 immutable symlink hardening status",
+    description:
+      "Made symlink hardening state visible so filesystem protections are easier to audit and keep in place.",
+    url: "https://github.com/NVIDIA/NemoClaw/pull/1499",
   },
 ];
 
@@ -154,17 +154,17 @@ export const coverageByOrg = [
   {
     label: "volcengine",
     count: "6",
-    highlights: "Auth, SSRF, retrieval, import validation, task ownership, plugin stability",
+    highlights: "Access control, SSRF, retrieval isolation, import validation, task ownership, bot proxy auth",
   },
   {
     label: "NVIDIA",
     count: "3",
-    highlights: "Docs CI, lifecycle guidance, runtime hardening visibility",
+    highlights: "Hardening visibility, safer lifecycle guidance, docs CI guardrails",
   },
   {
     label: "bytedance",
     count: "3",
-    highlights: "Shell escape, stored XSS, deployment guidance",
+    highlights: "Sandbox escape remediation, stored XSS mitigation, safer AI runtime defaults",
   },
   {
     label: "HKUDS",
@@ -177,17 +177,17 @@ export const coverageByRepo = [
   {
     label: "volcengine/OpenViking",
     count: "6",
-    highlights: "Auth, SSRF, retrieval, task ownership, import validation, plugin stability",
+    highlights: "Auth, SSRF, retrieval isolation, task ownership, import validation, bot proxy hardening",
   },
   {
     label: "NVIDIA/NemoClaw",
     count: "3",
-    highlights: "Runtime hardening visibility, docs CI, compatibility guidance",
+    highlights: "Runtime hardening visibility, lifecycle risk reduction, docs CI guardrails",
   },
   {
     label: "bytedance/deer-flow",
     count: "3",
-    highlights: "Shell escape, stored XSS, deployment sizing docs",
+    highlights: "Host shell escape, stored XSS, safer AI runtime posture",
   },
   {
     label: "HKUDS/OpenHarness",
@@ -197,7 +197,7 @@ export const coverageByRepo = [
 ];
 
 export const coverageFocus =
-  "My current focus is agentic AI security and harness engineering: reviewing agent workflows, identifying unsafe trust assumptions, and patching issues through collaborative maintainer review so systems get safer while I keep learning through the process.";
+  "My current work centers on AI security research: identifying unsafe trust assumptions in agent systems, harnesses, and tool runtimes, then collaborating with maintainers to ship patches, tests, and guardrails that make AI systems safer.";
 
 export const researchRecords = [
   {

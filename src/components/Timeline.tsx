@@ -13,10 +13,10 @@ function Timeline() {
   return (
     <div id="history">
       <div className="items-container">
-        <h1>Contribution timeline</h1>
+        <h1>Security timeline</h1>
         <p className="section-copy">
-          Recent merged milestones across upstream repositories. This is the shortest
-          path to understanding what kind of work is landing right now.
+          Recent merged security milestones across upstream repositories. This is the shortest
+          path to understanding what kind of AI security work is landing right now.
         </p>
         <VerticalTimeline lineColor="var(--line-strong)">
           {timelineEntries.map((entry) => (

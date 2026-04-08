@@ -11,11 +11,11 @@ function Expertise() {
   return (
     <div className="container" id="expertise">
       <div className="skills-container">
-        <h1>Key things I am working on</h1>
+        <h1>Security work in focus</h1>
         <p className="section-copy">
-          The current emphasis is agentic AI security and harness engineering:
+          The current emphasis is AI security and harness engineering:
           reviewing agent workflows, challenging unsafe assumptions, and turning
-          the findings into mergeable patches through collaboration with maintainers.
+          those findings into mergeable security patches through collaboration with maintainers.
         </p>
         <div className="skills-grid">
           {focusAreas.map((area, index) => (

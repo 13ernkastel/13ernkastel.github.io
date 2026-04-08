@@ -25,7 +25,7 @@ function Main() {
             </a>
           </div>
 
-          <p className="eyebrow">Agentic AI security, harness engineering, and collaborative patching</p>
+          <p className="eyebrow">AI security research, harness engineering, and safer agent systems</p>
           <h1>{profile.name}</h1>
           <p className="role">{profile.role}</p>
           <p className="summary">{profile.summary}</p>
