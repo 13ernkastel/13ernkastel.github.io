@@ -9,7 +9,9 @@ function Research() {
         <h1>Public research appendix</h1>
         <p className="section-copy">
           This section stays secondary to the merged-work archive. It is here for traceability:
-          public research records tied back to NVD and GitHub references only.
+          public records tied back to CVE.org or NVD plus a public GitHub reference when one
+          exists. Reserved IDs stay labeled as reserved until a full public disclosure is
+          published.
         </p>
 
         <div className="research-table-wrap">
@@ -19,7 +21,7 @@ function Research() {
                 <th>CVE</th>
                 <th>Project</th>
                 <th>Severity</th>
-                <th>NVD</th>
+                <th>Public record</th>
                 <th>GitHub reference</th>
               </tr>
             </thead>
@@ -27,7 +29,7 @@ function Research() {
               {researchRecords.map((record) => (
                 <tr key={record.cve}>
                   <td>
-                    <a href={record.nvdUrl} target="_blank" rel="noreferrer">
+                    <a href={record.recordUrl} target="_blank" rel="noreferrer">
                       {record.cve}
                     </a>
                   </td>
@@ -38,8 +40,8 @@ function Research() {
                     </span>
                   </td>
                   <td>
-                    <a href={record.nvdUrl} target="_blank" rel="noreferrer">
-                      NVD
+                    <a href={record.recordUrl} target="_blank" rel="noreferrer">
+                      {record.recordLabel}
                     </a>
                   </td>
                   <td>
