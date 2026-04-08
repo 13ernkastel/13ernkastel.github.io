@@ -78,6 +78,21 @@
   flex-wrap: wrap;
   gap: 0.85rem;
   margin-top: 1.6rem;
+
+  a {
+    min-width: 220px;
+    border: 1px solid transparent;
+    background: linear-gradient(135deg, var(--accent), #2ea9d9);
+    color: #08121d;
+    box-shadow: 0 14px 32px rgba(11, 124, 143, 0.22);
+    opacity: 1;
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: #08121d;
+    filter: brightness(1.03);
+  }
 }
 
 .stats-row {
@@ -158,10 +173,10 @@
 
   .hero-actions {
     flex-direction: column;
-  }
 
-  .primary-button,
-  .secondary-button {
-    width: 100%;
+    a {
+      width: 100%;
+      min-width: 0;
+    }
   }
 }
