@@ -1,0 +1,70 @@
+.skills-container {
+  padding: 5% 9%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+  h1 {
+    margin-bottom: 0.4rem;
+  }
+
+  svg {
+    color: var(--accent);
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 1.6rem;
+}
+
+.skill {
+  align-items: center;
+  text-align: left;
+  padding: 1.4rem;
+  border: 1px solid var(--line-soft);
+  border-radius: 22px;
+  background: var(--panel);
+  box-shadow: var(--card-shadow);
+
+  p {
+    color: var(--muted);
+    line-height: 1.75;
+  }
+}
+
+.chip {
+  color: #102032 !important;
+  background-color: white !important;
+  font-size: 0.8rem !important;
+  height: 28px !important;
+
+  span {
+    font-family: "IBM Plex Mono", monospace;
+    color: #102032;
+  }
+}
+
+.flex-chips {
+  line-height: 2;
+  margin-top: 1rem;
+
+  .chip-title {
+    color: var(--muted);
+    padding-right: 10px;
+    font-family: "IBM Plex Mono", monospace;
+  }
+}
+
+.flex-chips .MuiChip-root {
+  margin-right: 0.5em;
+  margin-bottom: 0.45rem;
+}
+
+@media screen and (max-width: 920px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

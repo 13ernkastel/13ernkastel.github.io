@@ -1,0 +1,40 @@
+.vertical-timeline span,
+.vertical-timeline p,
+.vertical-timeline h3,
+.vertical-timeline h4 {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.vertical-timeline-element p,
+.vertical-timeline-element h3,
+.vertical-timeline-element h4,
+.vertical-timeline-element span {
+  color: var(--surface-text);
+}
+
+.vertical-timeline-element p {
+  line-height: 1.75;
+}
+
+.vertical-timeline-element .vertical-timeline-element-date {
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.vertical-timeline-element-title a {
+  color: var(--surface-text);
+}
+
+.vertical-timeline-element-title a:hover {
+  color: var(--accent);
+}
+
+.svg-inline--fa {
+  color: var(--bg);
+}
+
+@media screen and (max-width: 1170px) {
+  .vertical-timeline-element .vertical-timeline-element-date {
+    color: var(--muted);
+  }
+}

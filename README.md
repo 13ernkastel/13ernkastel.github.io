@@ -1,25 +1,42 @@
 # 13ernkastel.github.io
 
-Static GitHub Pages site for `13ernkastel`.
+React portfolio site for `13ernkastel`, adapted from [`yujisatojr/react-portfolio-template`](https://github.com/yujisatojr/react-portfolio-template).
 
-The page tracks:
+## What it shows
 
 - merged pull requests into external upstream repositories
-- repository and organization coverage across upstream work
+- organization and repository coverage across current GitHub work
+- current focus areas including agentic AI security, harness engineering, code review, and collaborative patching
 - a secondary public research appendix linked through NVD and GitHub
 
-## Contents
+## Stack
 
-- `index.html`: primary site page
-- `styles.css`: shared site styling
-- `404.html`: fallback page for unknown routes
-- `favicon.svg`: icon used for browser tabs and link previews
-- `site.webmanifest`: basic install metadata
-- `robots.txt` and `sitemap.xml`: search-engine metadata
+- React
+- TypeScript
+- SCSS
+- Material UI
+- GitHub Pages with the production build committed at the repository root
+
+## Local development
+
+```bash
+npm ci
+npm start
+```
+
+## Build
+
+```bash
+npm run build
+```
 
 ## Publish
 
-Pushes to `main` publish the site through GitHub Pages for the repository user-site URL:
+`npm run build` writes the production site into `build/`. For GitHub Pages on this repo, the
+built assets are copied to the repository root and pushed on `main`, so the user site stays
+public without requiring a workflow-based deployment path.
+
+Published URL:
 
 - https://13ernkastel.github.io/
 
@@ -27,4 +44,4 @@ Pushes to `main` publish the site through GitHub Pages for the repository user-s
 
 - public GitHub pull request metadata
 - public CVE records from NVD
-- local notes from `13ernkastel/security-findings`
+- private local notes and working archives
