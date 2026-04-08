@@ -34,10 +34,10 @@ function Main() {
             <a className="primary-button" href={profile.githubUrl} target="_blank" rel="noreferrer">
               GitHub Profile
             </a>
-            <a className="secondary-button" href={profile.githubSearchUrl} target="_blank" rel="noreferrer">
+            <a className="primary-button" href={profile.githubSearchUrl} target="_blank" rel="noreferrer">
               Merged PR Search
             </a>
-            <a className="secondary-button" href={profile.siteRepoUrl} target="_blank" rel="noreferrer">
+            <a className="primary-button" href={profile.siteRepoUrl} target="_blank" rel="noreferrer">
               Site Source
             </a>
           </div>
