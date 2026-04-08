@@ -1,8 +1,8 @@
 export const profile = {
   name: "Lennon Chia",
-  role: "AI security researcher",
+  role: "AI systems security researcher",
   summary:
-    "I investigate AI agent, harness, and runtime security issues, then turn the findings into upstream fixes. My work focuses on trust boundaries, access control, sandbox escape paths, SSRF, stored XSS, and operational hardening that makes AI systems safer in practice.",
+    "I research security issues in agent systems, harnesses, and AI runtimes, then work with maintainers to land fixes, tests, and safer defaults upstream. My work focuses on trust boundaries, access control, sandbox escape paths, SSRF, stored XSS, and operational hardening for real AI systems.",
   avatarUrl: "https://avatars.githubusercontent.com/13ernkastel",
   githubUrl: "https://github.com/13ernkastel",
   githubReadmeUrl: "https://github.com/13ernkastel/13ernkastel",
@@ -197,7 +197,7 @@ export const coverageByRepo = [
 ];
 
 export const coverageFocus =
-  "My current work centers on AI security research: identifying unsafe trust assumptions in agent systems, harnesses, and tool runtimes, then collaborating with maintainers to ship patches, tests, and guardrails that make AI systems safer.";
+  "My current work centers on AI systems security research: identifying unsafe trust assumptions in agent systems, harnesses, and tool runtimes, then collaborating with maintainers to ship patches, tests, and guardrails that make AI systems safer.";
 
 export const researchRecords = [
   {

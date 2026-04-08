@@ -13,7 +13,7 @@ function Expertise() {
       <div className="skills-container">
         <h1>Security work in focus</h1>
         <p className="section-copy">
-          The current emphasis is AI security and harness engineering:
+          The current emphasis is AI systems security and harness engineering:
           reviewing agent workflows, challenging unsafe assumptions, and turning
           those findings into mergeable security patches through collaboration with maintainers.
         </p>
