@@ -219,11 +219,12 @@ export const coverageFocus =
 export const researchRecords = [
   {
     cve: "CVE-2026-39411",
-    project: "Undisclosed",
-    severity: "Reserved",
-    recordUrl: "https://www.cve.org/CVERecord?id=CVE-2026-39411",
-    recordLabel: "CVE.org reserved ID",
-    githubLabel: "No public project, fix PR, or GitHub issue is available yet.",
+    project: "lobehub/lobehub",
+    severity: "Medium",
+    recordUrl: "https://nvd.nist.gov/vuln/detail/CVE-2026-39411",
+    recordLabel: "NVD",
+    githubLabel: "Fix PR #13535",
+    githubUrl: "https://github.com/lobehub/lobehub/pull/13535",
   },
   {
     cve: "CVE-2026-22207",
