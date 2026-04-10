@@ -15,8 +15,9 @@ function Timeline() {
       <div className="items-container">
         <h1>Security timeline</h1>
         <p className="section-copy">
-          Recent merged security milestones across upstream repositories. This is the shortest
-          path to understanding what kind of AI systems security work is landing right now.
+          Recent merged security milestones across upstream repositories. This is the fastest
+          way to understand the kind of work landing now, with each item linking straight to
+          the public pull request for context.
         </p>
         <VerticalTimeline lineColor="var(--line-strong)">
           {timelineEntries.map((entry) => (

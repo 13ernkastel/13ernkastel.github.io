@@ -1,63 +1,65 @@
 import React from "react";
 import "../assets/styles/Research.scss";
-import { researchRecords } from "../data/site";
+import { profile, researchRecords } from "../data/site";
+import ResearchTable from "./ResearchTable";
 
-function Research() {
+interface ResearchProps {
+  onNavigateHome: () => void;
+}
+
+function Research({ onNavigateHome }: ResearchProps) {
+  const publicGithubRefs = researchRecords.filter((record) => Boolean(record.githubUrl)).length;
+  const criticalOrHighCount = researchRecords.filter((record) =>
+    ["Critical", "High"].includes(record.severity),
+  ).length;
+  const reservedCount = researchRecords.filter((record) => record.severity === "Reserved").length;
+
   return (
-    <div className="research-container" id="research">
+    <div className="container research-container" id="cve">
       <div className="items-container">
-        <h1>Public research appendix</h1>
-        <p className="section-copy">
-          This section stays secondary to the merged-work archive. It is here for traceability:
-          public records tied back to CVE.org or NVD plus a public GitHub reference when one
-          exists. Reserved IDs stay labeled as reserved until a full public disclosure is
-          published.
-        </p>
-
-        <div className="research-table-wrap">
-          <table className="research-table">
-            <thead>
-              <tr>
-                <th scope="col" className="col-cve">CVE</th>
-                <th scope="col" className="col-project">Project</th>
-                <th scope="col" className="col-severity">Severity</th>
-                <th scope="col" className="col-record">Public record</th>
-                <th scope="col" className="col-reference">GitHub reference</th>
-              </tr>
-            </thead>
-            <tbody>
-              {researchRecords.map((record) => (
-                <tr key={record.cve}>
-                  <td className="research-cve">
-                    <a href={record.recordUrl} target="_blank" rel="noreferrer">
-                      {record.cve}
-                    </a>
-                  </td>
-                  <td className="research-project">{record.project}</td>
-                  <td className="research-severity">
-                    <span className={`severity-pill ${record.severity.toLowerCase()}`}>
-                      {record.severity}
-                    </span>
-                  </td>
-                  <td className="research-record">
-                    <a href={record.recordUrl} target="_blank" rel="noreferrer">
-                      {record.recordLabel}
-                    </a>
-                  </td>
-                  <td className="research-reference">
-                    {record.githubUrl ? (
-                      <a href={record.githubUrl} target="_blank" rel="noreferrer">
-                        {record.githubLabel}
-                      </a>
-                    ) : (
-                      <span className="note-text">{record.githubLabel}</span>
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="research-page-hero">
+          <p className="eyebrow">Public disclosure archive</p>
+          <h1>CVE</h1>
+          <p className="section-copy">
+            This page keeps the public CVE record separate from the landing page, so the main site stays
+            easier to read while the disclosure details remain one click away. Every row links back to a
+            public record and, when available, a public GitHub fix, issue, or commit.
+          </p>
+          <div className="research-page-actions">
+            <button type="button" className="secondary-button button-reset" onClick={onNavigateHome}>
+              Back to home
+            </button>
+            <a className="secondary-button" href={profile.githubSearchUrl} target="_blank" rel="noreferrer">
+              Browse merged PRs
+            </a>
+          </div>
         </div>
+
+        <div className="research-summary-grid">
+          <div className="research-summary-card">
+            <span className="summary-label">Public records</span>
+            <strong>{researchRecords.length}</strong>
+            <p>Traceable entries currently listed in the public appendix.</p>
+          </div>
+          <div className="research-summary-card">
+            <span className="summary-label">Critical or High</span>
+            <strong>{criticalOrHighCount}</strong>
+            <p>Higher-severity records that deserve the fastest review.</p>
+          </div>
+          <div className="research-summary-card">
+            <span className="summary-label">GitHub-linked</span>
+            <strong>{publicGithubRefs}</strong>
+            <p>Rows that already point to a public fix PR, issue, or commit.</p>
+          </div>
+        </div>
+
+        <div className="research-note">
+          <p>
+            Reserved IDs stay marked as reserved until the disclosure is public. Right now
+            that applies to {reservedCount} record{reservedCount === 1 ? "" : "s"} in this list.
+          </p>
+        </div>
+        <ResearchTable />
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ function Footer() {
         <a href="https://github.com/yujisatojr/react-portfolio-template" target="_blank" rel="noreferrer">
           react-portfolio-template
         </a>{" "}
-        and rewritten around merged GitHub work, AI systems security, harness engineering, and collaborative patch review.
+        and rebuilt around public security research, merged upstream fixes, and traceable GitHub history.
       </p>
     </footer>
   );

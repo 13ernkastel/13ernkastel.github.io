@@ -3,9 +3,13 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import CodeOutlinedIcon from "@mui/icons-material/CodeOutlined";
 import "../assets/styles/Main.scss";
-import { profile, stats } from "../data/site";
+import { heroPoints, profile, stats } from "../data/site";
 
-function Main() {
+interface MainProps {
+  onNavigateToCve: () => void;
+}
+
+function Main({ onNavigateToCve }: MainProps) {
   return (
     <div className="container">
       <div className="about-section">
@@ -29,17 +33,27 @@ function Main() {
           <h1>{profile.name}</h1>
           <p className="role">{profile.role}</p>
           <p className="summary">{profile.summary}</p>
+          <p className="summary-support">{profile.supportingSummary}</p>
+
+          <ul className="hero-points" aria-label="Primary workflow">
+            {heroPoints.map((point) => (
+              <li key={point.title}>
+                <strong>{point.title}</strong>
+                <span>{point.description}</span>
+              </li>
+            ))}
+          </ul>
 
           <div className="hero-actions">
             <a className="primary-button" href={profile.githubUrl} target="_blank" rel="noreferrer">
-              GitHub Profile
+              View GitHub
             </a>
-            <a className="primary-button" href={profile.githubSearchUrl} target="_blank" rel="noreferrer">
-              Merged PR Search
+            <a className="secondary-button" href={profile.githubSearchUrl} target="_blank" rel="noreferrer">
+              Browse merged PRs
             </a>
-            <a className="primary-button" href={profile.siteRepoUrl} target="_blank" rel="noreferrer">
-              Site Source
-            </a>
+            <button type="button" className="secondary-button button-reset" onClick={onNavigateToCve}>
+              CVE
+            </button>
           </div>
 
           <div className="mobile_social_icons">

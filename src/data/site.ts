@@ -2,7 +2,9 @@ export const profile = {
   name: "Lennon Chia",
   role: "AI systems security researcher",
   summary:
-    "I research security issues in agent systems, harnesses, and AI runtimes, then work with maintainers to land fixes, tests, and safer defaults upstream. My work focuses on trust boundaries, access control, sandbox escape paths, SSRF, stored XSS, and operational hardening for real AI systems.",
+    "I review agent systems, harnesses, and AI runtimes for security flaws, validate impact, and work with maintainers to get fixes merged upstream.",
+  supportingSummary:
+    "Most of the work clusters around trust boundaries, access control, sandbox escape paths, SSRF, stored XSS, and the operational hardening needed to keep the same bug from returning.",
   avatarUrl: "https://avatars.githubusercontent.com/13ernkastel",
   githubUrl: "https://github.com/13ernkastel",
   githubReadmeUrl: "https://github.com/13ernkastel/13ernkastel",
@@ -11,6 +13,21 @@ export const profile = {
   siteRepoUrl: "https://github.com/13ernkastel/13ernkastel.github.io",
   snapshotDate: "2026-04-08",
 };
+
+export const heroPoints = [
+  {
+    title: "Find the risk",
+    description: "Trace trust boundaries, auth checks, network reachability, and tool exposure in AI-facing systems.",
+  },
+  {
+    title: "Prove the impact",
+    description: "Turn suspicious code paths into reproducible cases that maintainers can verify quickly.",
+  },
+  {
+    title: "Land the fix",
+    description: "Ship narrowly scoped patches, regression tests, and safer defaults through public pull requests.",
+  },
+];
 
 export const stats = [
   { value: "13", label: "External merged PRs" },
@@ -311,22 +328,22 @@ export const researchRecords = [
 export const linkCards = [
   {
     title: "GitHub Profile",
-    description: "Current profile, repositories, and contribution history.",
+    description: "Primary profile, repositories, and contribution history.",
     url: profile.githubUrl,
   },
   {
     title: "Merged PR Search",
-    description: "Live merged external pull-request search on GitHub.",
+    description: "Live search for merged pull requests across external repositories.",
     url: profile.githubSearchUrl,
   },
   {
     title: "Profile README",
-    description: "The profile repo that mirrors the merged-work-first summary.",
+    description: "The profile repository with the short merged-work-first summary.",
     url: profile.githubReadmeUrl,
   },
   {
     title: "Site Repository",
-    description: "Source for this GitHub Pages portfolio implementation.",
+    description: "Source for this GitHub Pages site and its current presentation.",
     url: profile.siteRepoUrl,
   },
 ];

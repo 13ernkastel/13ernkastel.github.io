@@ -10,8 +10,8 @@ function Contact() {
         <div className="contact_wrapper">
           <h1>Public links</h1>
           <p className="section-copy">
-            Every link below is meant to be publicly reachable without sign-in. If a page is not
-            clearly public, it does not get promoted here.
+            Everything below should be reachable without sign-in. If a page is not clearly public,
+            it does not get promoted here.
           </p>
           <div className="contact-links-grid">
             {linkCards.map((card) => (

@@ -16,18 +16,18 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 
 const drawerWidth = 240;
-const navItems = [
+const homeNavItems = [
   ["Focus", "expertise"],
   ["Timeline", "history"],
   ["Merged Work", "projects"],
-  ["Research", "research"],
   ["Links", "contact"],
 ];
 
-function Navigation({ parentToChild, modeChange }: any) {
+function Navigation({ parentToChild, modeChange, page, navigateToPage }: any) {
   const { mode } = parentToChild;
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
+  const isHomePage = page === "home";
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -58,13 +58,26 @@ function Navigation({ parentToChild, modeChange }: any) {
       <p className="mobile-menu-top">Navigation</p>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item[0]} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }} onClick={() => scrollToSection(item[1])}>
-              <ListItemText primary={item[0]} />
+        {isHomePage ? (
+          homeNavItems.map((item) => (
+            <ListItem key={item[0]} disablePadding>
+              <ListItemButton sx={{ textAlign: "center" }} onClick={() => scrollToSection(item[1])}>
+                <ListItemText primary={item[0]} />
+              </ListItemButton>
+            </ListItem>
+          ))
+        ) : (
+          <ListItem disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }} onClick={() => navigateToPage("home")}>
+              <ListItemText primary="Home" />
             </ListItemButton>
           </ListItem>
-        ))}
+        )}
+        <ListItem disablePadding>
+          <ListItemButton sx={{ textAlign: "center" }} onClick={() => navigateToPage("cve")}>
+            <ListItemText primary="CVE" />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -74,13 +87,28 @@ function Navigation({ parentToChild, modeChange }: any) {
       <CssBaseline />
       <AppBar component="nav" id="navigation" className={`navbar-fixed-top${scrolled ? " scrolled" : ""}`}>
         <Toolbar className="navigation-bar">
-          <div className="nav-brand">13ernkastel</div>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button key={item[0]} onClick={() => scrollToSection(item[1])} sx={{ color: "inherit" }}>
-                {item[0]}
+          <button type="button" className="nav-brand nav-brand-button button-reset" onClick={() => navigateToPage("home")}>
+            13ernkastel
+          </button>
+          <Box sx={{ display: { xs: "none", sm: "flex" } }} className="nav-links">
+            {isHomePage &&
+              homeNavItems.map((item) => (
+                <Button key={item[0]} onClick={() => scrollToSection(item[1])} sx={{ color: "inherit" }}>
+                  {item[0]}
+                </Button>
+              ))}
+            {!isHomePage && (
+              <Button onClick={() => navigateToPage("home")} sx={{ color: "inherit" }}>
+                Home
               </Button>
-            ))}
+            )}
+            <Button
+              className={`nav-route-link${isHomePage ? " nav-route-link-primary" : ""}`}
+              onClick={() => navigateToPage("cve")}
+              sx={{ color: "inherit" }}
+            >
+              CVE
+            </Button>
           </Box>
           <div className="nav-actions">
             {mode === "dark" ? (

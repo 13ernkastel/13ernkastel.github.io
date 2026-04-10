@@ -13,9 +13,10 @@ function Expertise() {
       <div className="skills-container">
         <h1>Security work in focus</h1>
         <p className="section-copy">
-          The current emphasis is AI systems security and harness engineering:
-          reviewing agent workflows, challenging unsafe assumptions, and turning
-          those findings into mergeable security patches through collaboration with maintainers.
+          The homepage now stays focused on the work itself. These are the three repeatable lanes:
+          finding risky trust assumptions, proving impact with concrete repro paths, and turning those
+          findings into fixes that maintainers can keep in place. The disclosed CVE record lives on its
+          own page so the site is easier to scan.
         </p>
         <div className="skills-grid">
           {focusAreas.map((area, index) => (
